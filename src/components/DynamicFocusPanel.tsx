@@ -34,6 +34,7 @@ import {
 } from '../mock/data';
 import { AIGenerationIcon } from './icons/AIGenerationIcon';
 import { EASE_STANDARD } from '../motion/variants';
+import { colors } from '../tokens/theme';
 
 /**
  * Dynamic Focus Panel — dashboard §4.3 Zone 1 top surface (v1.8).
@@ -55,15 +56,15 @@ const MODE_LABELS: Record<Mode, string> = {
   'steady-state': 'Steady State',
 };
 
-// Brand-harmonious tokens scoped to this panel. #7BA87F (muted sage) is the
-// amendment's fallback positive token; we anchor to it rather than widening
-// the global palette for a single demo surface.
+// #7BA87F (muted sage) is the amendment's fallback positive token — scoped
+// to this panel rather than widened into the global palette. Everything else
+// routes through `colors` from tokens/theme.
 const COLOR_POSITIVE = '#7BA87F';
-const COLOR_BONE = '#F5F1E8';
-const COLOR_BONE_MUTED = '#A8A399';
-const COLOR_GOLD_3 = '#C9A24E';
-const COLOR_GOLD_4 = '#E8C472';
-const COLOR_LIVE_RED = '#E53935';
+const COLOR_BONE = colors.bone;
+const COLOR_BONE_MUTED = colors.boneMuted;
+const COLOR_GOLD_3 = colors.gold3;
+const COLOR_GOLD_4 = colors.gold4;
+const COLOR_LIVE_RED = colors.liveRed;
 
 export function DynamicFocusPanel() {
   const [mode, setMode] = useState<Mode>('queue-clearance');
@@ -297,11 +298,7 @@ function BatchesList() {
             <button
               type="button"
               onClick={() => navigate('/review')}
-              className="specular-sweep relative flex h-7 items-center overflow-hidden rounded-[6px] px-2.5 font-display text-[11px] font-medium uppercase tracking-[0.15em] text-ink transition-transform duration-200 ease-cinematic hover:-translate-y-[0.5px]"
-              style={{
-                background:
-                  'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-              }}
+              className="specular-sweep relative flex h-7 items-center overflow-hidden rounded-[6px] bg-brushed-gold px-2.5 font-display text-[11px] font-medium uppercase tracking-[0.15em] text-ink transition-transform duration-200 ease-cinematic hover:-translate-y-[0.5px]"
             >
               <span className="relative z-[2]">Approve</span>
             </button>

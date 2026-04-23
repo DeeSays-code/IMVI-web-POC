@@ -65,17 +65,7 @@ export function ImviPlus() {
           transition={{ duration: 0.6, ease: EASE_CINEMATIC as unknown as number[] }}
           className="flex flex-col"
         >
-          <p
-            className="font-display text-[16px] font-bold uppercase tracking-[0.32em]"
-            style={{
-              background:
-                'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              color: 'transparent',
-            }}
-          >
+          <p className="brushed-gold-text font-display text-[16px] font-bold uppercase tracking-[0.32em]">
             IMVI+
           </p>
           <h1 className="mt-4 font-display text-[48px] font-bold leading-none tracking-[0.01em] text-bone">
@@ -259,11 +249,7 @@ function AgentModalBody({
         <button
           type="button"
           onClick={onNotify}
-          className="specular-sweep relative flex h-11 items-center gap-2 overflow-hidden rounded-[8px] px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-          style={{
-            background:
-              'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-          }}
+          className="specular-sweep relative flex h-11 items-center gap-2 overflow-hidden rounded-[8px] bg-brushed-gold px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
         >
           <BellRing size={13} strokeWidth={2.2} className="relative z-[2]" />
           <span className="relative z-[2]">Notify me</span>

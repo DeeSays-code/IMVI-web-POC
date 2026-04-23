@@ -14,3 +14,8 @@ cards/
 # Card compositor scratch (src/assets/card-variations/ holds what the app ships)
 tools/card-generator/output/
 tools/card-generator/input/
+
+# tsc --build artifacts
+*.tsbuildinfo
+vite.config.d.ts
+vite.config.js

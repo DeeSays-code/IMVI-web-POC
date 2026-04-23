@@ -266,11 +266,7 @@ export function ReviewQueue() {
                     <button
                       type="button"
                       onClick={onApprove}
-                      className="specular-sweep relative flex h-10 items-center gap-2 overflow-hidden rounded-[8px] px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-                      style={{
-                        background:
-                          'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-                      }}
+                      className="specular-sweep relative flex h-10 items-center gap-2 overflow-hidden rounded-[8px] bg-brushed-gold px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
                     >
                       <span className="relative z-[2]">
                         Approve all · {group.items.length}
@@ -425,11 +421,7 @@ function DetailModal({
             <button
               type="button"
               onClick={onApprove}
-              className="specular-sweep relative flex h-11 flex-1 items-center justify-center overflow-hidden rounded-[8px] font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-              style={{
-                background:
-                  'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-              }}
+              className="specular-sweep relative flex h-11 flex-1 items-center justify-center overflow-hidden rounded-[8px] bg-brushed-gold font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
             >
               <span className="relative z-[2]">Approve · send to print</span>
             </button>

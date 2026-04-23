@@ -1085,7 +1085,7 @@ export const users: User[] = [
   { id: 'user_grace', name: 'Grace Mendez', email: 'grace@alamoathletic.com', role: 'club_admin', teamIds: ['team_safc', 'team_raiders_sa'], status: 'active', paid: true, lastActiveAgo: '4 hrs ago', initials: 'GM' },
 
   // Parents — NxLVL (11)
-  { id: 'user_p_01', name: 'Sana Ghafari', email: 'sana.ghafari@gmail.com', role: 'parent', teamIds: ['team_nxlvl_chi'], status: 'active', paid: true, lastActiveAgo: '3 hrs ago', initials: 'SG', athleteId: 'ath_leigha' },
+  { id: 'user_p_01', name: 'Amer Ghafari', email: 'amer.ghafari@gmail.com', role: 'parent', teamIds: ['team_nxlvl_chi'], status: 'active', paid: true, lastActiveAgo: '3 hrs ago', initials: 'AG', athleteId: 'ath_leigha' },
   { id: 'user_p_02', name: 'Obi Okonkwo', email: 'obi.o@gmail.com', role: 'parent', teamIds: ['team_nxlvl_chi'], status: 'active', paid: true, lastActiveAgo: '6 hrs ago', initials: 'OO', athleteId: 'ath_nx_01' },
   { id: 'user_p_03', name: 'Rohan Narang', email: 'rnarang@outlook.com', role: 'parent', teamIds: ['team_nxlvl_chi'], status: 'active', paid: true, lastActiveAgo: '1 day ago', initials: 'RN', athleteId: 'ath_nx_02' },
   { id: 'user_p_04', name: 'Camille Fontaine', email: 'camille@fontaine.co', role: 'parent', teamIds: ['team_nxlvl_chi'], status: 'active', paid: true, lastActiveAgo: '2 days ago', initials: 'CF', athleteId: 'ath_nx_03' },

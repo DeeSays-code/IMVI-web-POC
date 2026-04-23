@@ -857,11 +857,7 @@ function ConfirmSummary({
         <button
           type="button"
           onClick={onSubmit}
-          className="specular-sweep relative flex h-11 flex-shrink-0 items-center gap-2 overflow-hidden rounded-[8px] px-5 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-          style={{
-            background:
-              'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-          }}
+          className="specular-sweep relative flex h-11 flex-shrink-0 items-center gap-2 overflow-hidden rounded-[8px] bg-brushed-gold px-5 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
         >
           <span className="relative z-[2]">Onboard batch · create cards</span>
           <ArrowRight size={13} strokeWidth={2.2} className="relative z-[2]" />
@@ -931,11 +927,7 @@ function SuccessPanel({
             <button
               type="button"
               onClick={onViewQueue}
-              className="specular-sweep relative flex h-11 items-center gap-2 overflow-hidden rounded-[8px] px-5 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-              style={{
-                background:
-                  'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-              }}
+              className="specular-sweep relative flex h-11 items-center gap-2 overflow-hidden rounded-[8px] bg-brushed-gold px-5 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
             >
               <span className="relative z-[2]">View Review Queue</span>
               <ArrowUpRight size={13} strokeWidth={2.2} className="relative z-[2]" />

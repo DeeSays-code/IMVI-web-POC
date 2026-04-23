@@ -280,11 +280,7 @@ export function DesignWorkspace() {
                       <button
                         type="button"
                         onClick={handleGenerate}
-                        className="specular-sweep relative inline-flex h-12 items-center gap-3 overflow-hidden rounded-[10px] px-6 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-                        style={{
-                          background:
-                            'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-                        }}
+                        className="specular-sweep relative inline-flex h-12 items-center gap-3 overflow-hidden rounded-[10px] bg-brushed-gold px-6 font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
                       >
                         <AIGenerationIcon size={18} />
                         <span className="relative z-[2]">Generate designs</span>

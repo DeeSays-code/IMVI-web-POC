@@ -53,22 +53,24 @@ import {
 } from '../mock/data';
 import { DynamicFocusPanel } from '../components/DynamicFocusPanel';
 import { EASE_CINEMATIC, fadeRise, staggerContainer } from '../motion/variants';
+import { colors } from '../tokens/theme';
 
 /* ──────────────────────────────────────────────────────────────────────
- * Status colors — dashboard-scoped. Green/amber/red sit outside the core
- * brand tokens; we use them only to encode health on data viz surfaces.
+ * Brand tokens routed through `colors` for a single source of truth, plus
+ * dashboard-scoped status colors for thriving/steady health encoding
+ * (these sit outside the core brand tokens by design — see v1.3 note).
  * ────────────────────────────────────────────────────────────────────── */
 const HEALTH = {
-  thriving: '#6FA05E',  // green — on track
-  steady:   '#D9A441',  // amber — steady but worth a glance
-  attention: '#E53935', // live-red — needs action
+  thriving: '#6FA05E',  // green — dashboard-scoped, not in brand tokens
+  steady:   '#D9A441',  // amber — dashboard-scoped, not in brand tokens
+  attention: colors.liveRed,
 } as const;
 
-const TEXT_BONE = '#F5F1E8';
-const TEXT_MUTED = '#A8A399';
-const GOLD_3 = '#C9A24E';
-const GOLD_4 = '#E8C472';
-const LIVE_RED = '#E53935';
+const TEXT_BONE = colors.bone;
+const TEXT_MUTED = colors.boneMuted;
+const GOLD_3 = colors.gold3;
+const GOLD_4 = colors.gold4;
+const LIVE_RED = colors.liveRed;
 
 /* ──────────────────────────────────────────────────────────────────────
  * Main screen

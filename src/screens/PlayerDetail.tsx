@@ -47,6 +47,7 @@ import { Modal } from '../components/Modal';
 import { Toast } from '../components/Toast';
 import { EASE_CINEMATIC, fadeRise, staggerContainer } from '../motion/variants';
 import { useAppState } from '../state/AppState';
+import { colors } from '../tokens/theme';
 
 const CARD_STATUS_COPY: Record<CardStatus, { label: string; tone: 'muted' | 'gold' | 'red' | 'green' }> = {
   not_ready:  { label: 'Not ready',    tone: 'muted' },
@@ -519,10 +520,10 @@ function RelationshipMap({
             <path d="M 0 80 C 40 80, 40 20, 80 20" stroke="rgba(201,162,78,0.45)" strokeWidth="1.5" fill="none" />
             <path d="M 0 80 L 80 80" stroke="rgba(201,162,78,0.45)" strokeWidth="1.5" fill="none" />
             <path d="M 0 80 C 40 80, 40 140, 80 140" stroke="rgba(201,162,78,0.45)" strokeWidth="1.5" fill="none" />
-            <circle cx="0" cy="80" r="3" fill="#C9A24E" />
-            <circle cx="80" cy="20" r="3" fill="#C9A24E" />
-            <circle cx="80" cy="80" r="3" fill="#C9A24E" />
-            <circle cx="80" cy="140" r="3" fill="#C9A24E" />
+            <circle cx="0" cy="80" r="3" fill={colors.gold3} />
+            <circle cx="80" cy="20" r="3" fill={colors.gold3} />
+            <circle cx="80" cy="80" r="3" fill={colors.gold3} />
+            <circle cx="80" cy="140" r="3" fill={colors.gold3} />
           </svg>
         </div>
 
@@ -1172,11 +1173,7 @@ function VideoDetailBody({
         <button
           type="button"
           onClick={onDownload}
-          className="specular-sweep relative flex h-11 items-center justify-center gap-2 overflow-hidden rounded-[8px] font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
-          style={{
-            background:
-              'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-          }}
+          className="specular-sweep relative flex h-11 items-center justify-center gap-2 overflow-hidden rounded-[8px] bg-brushed-gold font-display text-[12px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px]"
         >
           <Download size={13} strokeWidth={2.2} className="relative z-[2]" />
           <span className="relative z-[2]">Download</span>
@@ -1248,11 +1245,7 @@ function EditEmailForm({
         <button
           type="submit"
           disabled={!valid || email.trim() === user.email}
-          className="specular-sweep relative flex h-10 items-center overflow-hidden rounded-[8px] px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-40"
-          style={{
-            background:
-              'linear-gradient(110deg, #5C4620 0%, #8B6A2F 15%, #C9A24E 35%, #F0D286 50%, #C9A24E 65%, #8B6A2F 85%, #5C4620 100%)',
-          }}
+          className="specular-sweep relative flex h-10 items-center overflow-hidden rounded-[8px] bg-brushed-gold px-5 font-display text-[11px] font-semibold uppercase tracking-label-md text-ink transition-transform duration-300 ease-cinematic hover:-translate-y-[1px] disabled:cursor-not-allowed disabled:opacity-40"
         >
           <span className="relative z-[2]">Save</span>
         </button>

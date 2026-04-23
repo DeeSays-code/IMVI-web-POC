@@ -15,10 +15,7 @@ export function Shell() {
     <div className="min-h-screen bg-ink text-bone">
       <Sidebar />
       <Topbar />
-      <main
-        className="ml-sidebar min-h-screen overflow-x-hidden pt-0"
-        style={{ background: '#0A0A0A' }}
-      >
+      <main className="ml-sidebar min-h-screen overflow-x-hidden bg-ink pt-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}

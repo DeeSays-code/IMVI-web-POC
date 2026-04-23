@@ -48,9 +48,6 @@
   :root {
     color-scheme: dark;
     font-family: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
-    /* Per mobile spec §2.2 — ease, never bounce. Standard curve. */
-    --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
-    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   html,
