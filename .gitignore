@@ -1,0 +1,16 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+
+# Local Claude Code settings
+.claude/
+
+# Reference PDFs — not code, ~104MB
+cards/
+
+# Card compositor scratch (src/assets/card-variations/ holds what the app ships)
+tools/card-generator/output/
+tools/card-generator/input/

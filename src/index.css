@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -----------------------------------------------------------------------
+ * Self-hosted variable fonts. font-display: block — we do not accept a
+ * system-font flash. Oswald is the brand. No Arial fallback in view.
+ * ----------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Oswald Variable';
+  font-style: normal;
+  font-display: block;
+  font-weight: 200 700;
+  src: url('./assets/fonts/oswald-variable.woff2') format('woff2-variations'),
+    url('./assets/fonts/oswald-variable.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: block;
+  font-weight: 100 900;
+  src: url('./assets/fonts/inter-variable.woff2') format('woff2-variations'),
+    url('./assets/fonts/inter-variable.woff2') format('woff2');
+}
+
+/* Caveat — brushy handwritten script for player first names on cards.
+   Sports-card "signature" energy, pairs with Oswald block for the lockup. */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url('./assets/fonts/caveat-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url('./assets/fonts/caveat-700.woff2') format('woff2');
+}
+
+/* -----------------------------------------------------------------------
+ * Base
+ * ----------------------------------------------------------------------- */
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-family: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
+    /* Per mobile spec §2.2 — ease, never bounce. Standard curve. */
+    --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: #0a0a0a;
+    color: #f5f1e8;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* No rubber-band scroll revealing browser chrome — this is an app surface. */
+    overscroll-behavior-y: none;
+  }
+
+  /* Focus rings — gold, not blue. */
+  :focus-visible {
+    outline: 2px solid rgba(201, 162, 78, 0.6);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: rgba(201, 162, 78, 0.35);
+    color: #f5f1e8;
+  }
+
+  /* Scrollbar — thin, gold-tinted, ink-bg. Chrome/Safari. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(92, 70, 32, 0.6);
+    border-radius: 10px;
+    border: 2px solid #0a0a0a;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 162, 78, 0.5);
+  }
+}
+
+/* -----------------------------------------------------------------------
+ * Component utility classes — motif patterns used broadly.
+ * Defined here so the brand language is centralized, not re-spelled in
+ * every component.
+ * ----------------------------------------------------------------------- */
+@layer components {
+  /* Brushed-gold surface for primary buttons, active indicators, wordmark. */
+  .brushed-gold {
+    background: linear-gradient(
+      110deg,
+      #5c4620 0%,
+      #8b6a2f 15%,
+      #c9a24e 35%,
+      #f0d286 50%,
+      #c9a24e 65%,
+      #8b6a2f 85%,
+      #5c4620 100%
+    );
+  }
+
+  /* Gold text via background-clip. Use on Oswald display numerals and hero years. */
+  .brushed-gold-text {
+    background: linear-gradient(
+      110deg,
+      #5c4620 0%,
+      #8b6a2f 15%,
+      #c9a24e 35%,
+      #f0d286 50%,
+      #c9a24e 65%,
+      #8b6a2f 85%,
+      #5c4620 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  /* Specular sweep overlay — 800ms left-to-right band on hover. Not a glow. */
+  .specular-sweep {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .specular-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 20%,
+      rgba(252, 230, 163, 0.35) 45%,
+      rgba(252, 230, 163, 0.55) 50%,
+      rgba(252, 230, 163, 0.35) 55%,
+      transparent 80%
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0;
+    z-index: 1;
+  }
+  .specular-sweep:hover::after,
+  .specular-sweep:focus-visible::after {
+    animation: gold-sweep 800ms cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 1;
+  }
+
+  /* Section eyebrow — Oswald caps small, wide-tracked, gold. */
+  .eyebrow {
+    font-family: 'Oswald Variable', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c9a24e;
+  }
+
+  /* Data chyron — Oswald heavy, tight tracking. Use for numerics. */
+  .chyron {
+    font-family: 'Oswald Variable', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    font-feature-settings: 'tnum' 1, 'lnum' 1;
+  }
+
+  /* Hairline divider — bone-muted 8% opacity. Used in tables and list rows. */
+  .hairline {
+    border-color: rgba(168, 163, 153, 0.08);
+  }
+  .hairline-soft {
+    border-color: rgba(168, 163, 153, 0.05);
+  }
+
+  /* Card surface — ink-2 with subtle top-light inset reading. */
+  .ink-card {
+    background-color: #111111;
+    background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.018) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(0, 0, 0, 0.18) 100%
+    );
+  }
+
+  /* Grain overlay — subtle materiality, never obvious. Apply to large ink surfaces. */
+  .grain {
+    position: relative;
+  }
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(
+      rgba(201, 162, 78, 0.035) 1px,
+      transparent 1px
+    );
+    background-size: 3px 3px;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+  }
+
+  /* Marquee scroller for sponsor/activity strips. Content duplicated inside. */
+  .marquee-track {
+    animation: marquee-x 28s linear infinite;
+  }
+}

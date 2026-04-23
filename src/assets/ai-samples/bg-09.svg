@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" preserveAspectRatio="xMidYMid slice">
+  <!-- 09 · PITCH — emerald + cream split diagonally with torn chaos at the border -->
+  <defs>
+    <linearGradient id="b9-cream" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F4EDD6"/>
+      <stop offset="100%" stop-color="#D7CDA7"/>
+    </linearGradient>
+    <linearGradient id="b9-emerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#178A52"/>
+      <stop offset="55%" stop-color="#0F6E3E"/>
+      <stop offset="100%" stop-color="#06412A"/>
+    </linearGradient>
+    <filter id="b9-paint" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="17" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="24"/>
+    </filter>
+    <filter id="b9-paint-fine">
+      <feTurbulence type="fractalNoise" baseFrequency="0.07" numOctaves="2" seed="47" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="12"/>
+    </filter>
+    <filter id="b9-spray">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="51"/>
+      <feColorMatrix values="0 0 0 0 0.06 0 0 0 0 0.44 0 0 0 0 0.24 0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- 1. Cream base -->
+  <rect width="800" height="1120" fill="url(#b9-cream)"/>
+
+  <!-- 2. Emerald upper-left diagonal mass with torn edge -->
+  <g filter="url(#b9-paint)">
+    <path d="M-60 -60 L 860 -60 L 860 260 L 720 300 L600 280 L 480 360 L 380 340 L 280 420 L 180 400 L 80 470 L -60 440 Z"
+          fill="url(#b9-emerald)"/>
+  </g>
+
+  <!-- 3. Cross-diagonal brush strike -->
+  <g filter="url(#b9-paint-fine)">
+    <path d="M20 120 C 240 220 420 420 600 540 C 720 620 780 700 820 760"
+          stroke="#0F6E3E" stroke-width="14" fill="none" opacity="0.55" stroke-linecap="round"/>
+    <path d="M80 80 C 280 180 440 360 620 500 C 730 580 780 640 820 700"
+          stroke="#06412A" stroke-width="6" fill="none" opacity="0.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- 4. Emerald drips pouring from the torn edge down -->
+  <g filter="url(#b9-paint-fine)">
+    <path d="M140 430 Q 144 520 140 620" stroke="#0F6E3E" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M280 400 Q 284 490 280 580" stroke="#178A52" stroke-width="12" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M420 360 Q 424 450 420 540" stroke="#0F6E3E" stroke-width="14" fill="none" stroke-linecap="round"/>
+    <path d="M560 310 Q 564 400 560 490" stroke="#06412A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M680 290 Q 684 370 680 450" stroke="#0F6E3E" stroke-width="11" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <path d="M740 300 Q 744 380 740 460" stroke="#178A52" stroke-width="9" fill="none" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- 5. Big emerald splash on cream -->
+  <g filter="url(#b9-paint)">
+    <path d="M220 640 C 320 620 380 700 340 760 C 300 810 220 780 220 640 Z" fill="#0F6E3E"/>
+    <path d="M480 720 C 560 700 620 780 580 820 C 540 860 460 820 480 720 Z" fill="#178A52" opacity="0.9"/>
+  </g>
+  <g fill="#0F6E3E">
+    <circle cx="160" cy="640" r="7"/><circle cx="380" cy="760" r="5"/>
+    <circle cx="520" cy="720" r="4"/><circle cx="660" cy="740" r="5"/>
+    <circle cx="300" cy="820" r="4"/>
+  </g>
+
+  <!-- 6. Cream splash back onto emerald -->
+  <g fill="#F4EDD6">
+    <path d="M320 80 C 340 60 360 90 340 100 C 330 110 310 100 320 80 Z" filter="url(#b9-paint-fine)"/>
+    <path d="M520 120 C 540 100 560 130 540 140 C 530 150 510 140 520 120 Z" filter="url(#b9-paint-fine)" opacity="0.92"/>
+    <circle cx="120" cy="180" r="6"/><circle cx="240" cy="120" r="4"/>
+    <circle cx="360" cy="200" r="5"/><circle cx="480" cy="100" r="3.5"/>
+    <circle cx="600" cy="180" r="4"/><circle cx="720" cy="120" r="3"/>
+    <circle cx="180" cy="260" r="3"/><circle cx="420" cy="300" r="2.5"/>
+  </g>
+
+  <!-- 7. Heavy emerald bottom-right burst -->
+  <g filter="url(#b9-paint)">
+    <path d="M860 1180 L860 780 L 720 820 L 620 940 L 580 1020 L 720 1100 L 820 1180 Z" fill="url(#b9-emerald)" opacity="0.92"/>
+    <path d="M560 940 C 620 920 680 970 640 1010 C 600 1040 530 1000 560 940 Z" fill="#0F6E3E"/>
+  </g>
+
+  <!-- 8. Chevrons -->
+  <g fill="none" stroke="#0F6E3E" stroke-width="3.8" stroke-linecap="round">
+    <path d="M40 1020 L70 1050 L40 1080"/>
+    <path d="M70 1020 L100 1050 L70 1080" opacity="0.7"/>
+    <path d="M100 1020 L130 1050 L100 1080" opacity="0.45"/>
+  </g>
+  <g fill="none" stroke="#F4EDD6" stroke-width="4" stroke-linecap="round">
+    <path d="M720 50 L750 80 L720 110"/>
+    <path d="M690 50 L720 80 L690 110" opacity="0.65"/>
+    <path d="M660 50 L690 80 L660 110" opacity="0.35"/>
+  </g>
+
+  <!-- 9. Halftone mid-right -->
+  <g fill="#0F6E3E" opacity="0.78">
+    <circle cx="560" cy="480" r="3.5"/><circle cx="600" cy="480" r="3"/><circle cx="640" cy="480" r="2.5"/><circle cx="680" cy="480" r="2"/>
+    <circle cx="580" cy="520" r="3"/><circle cx="620" cy="520" r="2.5"/><circle cx="660" cy="520" r="2"/>
+    <circle cx="600" cy="560" r="2.5"/><circle cx="640" cy="560" r="2"/>
+  </g>
+
+  <!-- 10. Plus sparkles -->
+  <g stroke="#0F6E3E" stroke-width="2.4" stroke-linecap="round" opacity="0.8">
+    <path d="M80 780 L80 796 M70 788 L90 788"/>
+    <path d="M260 860 L260 876 M251 868 L269 868"/>
+    <path d="M460 860 L460 876 M451 868 L469 868"/>
+    <path d="M540 980 L540 996 M531 988 L549 988"/>
+    <path d="M340 1000 L340 1016 M331 1008 L349 1008"/>
+    <path d="M140 940 L140 954 M133 947 L147 947"/>
+  </g>
+
+  <!-- 11. Spray -->
+  <rect width="800" height="1120" filter="url(#b9-spray)" opacity="0.25"/>
+
+  <!-- 12. Inner frame -->
+  <rect x="24" y="24" width="752" height="1072" rx="18" ry="18" fill="none" stroke="#F4EDD6" stroke-width="1.4" opacity="0.75"/>
+</svg>

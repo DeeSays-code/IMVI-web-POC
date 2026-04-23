@@ -1,0 +1,61 @@
+{
+  "nxlvl": {
+    "display_name": "NxLVL Chicago",
+    "logo": "nxlvl.jpg",
+    "colors": {
+      "primary":    "#5A2590",
+      "accent":     "#F5F1E8",
+      "dark":       "#2A0F4A",
+      "light":      "#F5F1E8",
+      "silhouette": "#3A1560"
+    },
+    "default_texture": "splatter-01.png",
+    "default_silhouette": "_silhouette_preview.png"
+  },
+  "pfa": {
+    "display_name": "PFA San Fernando",
+    "logo": "pfa.jpg",
+    "colors": {
+      "primary": "#FFD60A",
+      "accent":  "#0E0E0E",
+      "dark":    "#050505",
+      "light":   "#F5F1E8"
+    },
+    "default_texture": "splatter-03.png"
+  },
+  "safc": {
+    "display_name": "San Antonio FC",
+    "logo": "safc.png",
+    "colors": {
+      "primary":    "#E03131",
+      "accent":     "#D9D4CE",
+      "dark":       "#0D0D0D",
+      "light":      "#F5F1E8",
+      "silhouette": "#6B1818"
+    },
+    "default_texture": "splatter-07.png",
+    "default_silhouette": "_silhouette_preview.png"
+  },
+  "raiders": {
+    "display_name": "Raiders San Antonio",
+    "logo": "raiders.jpg",
+    "colors": {
+      "primary": "#1A1A1A",
+      "accent":  "#C7CCD1",
+      "dark":    "#0A0A0A",
+      "light":   "#F5F1E8"
+    },
+    "default_texture": "splatter-05.png"
+  },
+  "batrs": {
+    "display_name": "Batrs Soccer",
+    "logo": null,
+    "colors": {
+      "primary": "#11204A",
+      "accent":  "#F4C21C",
+      "dark":    "#0B1736",
+      "light":   "#F5F1E8"
+    },
+    "default_texture": "splatter-02.png"
+  }
+}

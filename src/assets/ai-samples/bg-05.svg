@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" preserveAspectRatio="xMidYMid slice">
+  <!-- 05 · INFERNO — center orange burst radiating over black, ember smoke -->
+  <defs>
+    <radialGradient id="b5-base" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#2C1509"/>
+      <stop offset="65%" stop-color="#110803"/>
+      <stop offset="100%" stop-color="#040201"/>
+    </radialGradient>
+    <radialGradient id="b5-core" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" stop-color="#FFB74C" stop-opacity="0.65"/>
+      <stop offset="50%" stop-color="#FF7A1C" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#110803" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="b5-paint" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.022" numOctaves="3" seed="5" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="22"/>
+    </filter>
+    <filter id="b5-paint-fine">
+      <feTurbulence type="fractalNoise" baseFrequency="0.08" numOctaves="2" seed="19" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="10"/>
+    </filter>
+    <filter id="b5-smoke">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="3" seed="27"/>
+      <feColorMatrix values="0 0 0 0 0.95 0 0 0 0 0.5 0 0 0 0 0.15 0 0 0 0.45 0"/>
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <filter id="b5-spray">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="33"/>
+      <feColorMatrix values="0 0 0 0 0.95 0 0 0 0 0.45 0 0 0 0 0.08 0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- 1. Black base -->
+  <rect width="800" height="1120" fill="url(#b5-base)"/>
+  <rect width="800" height="1120" fill="url(#b5-core)"/>
+
+  <!-- 2. Ember smoke band -->
+  <rect x="0" y="380" width="800" height="360" filter="url(#b5-smoke)" opacity="0.55"/>
+
+  <!-- 3. Main orange paint mass in center -->
+  <g filter="url(#b5-paint)">
+    <path d="M400 360 C 520 320 580 440 540 540 C 480 640 340 640 300 540 C 260 440 300 400 400 360 Z" fill="#FF7A1C"/>
+  </g>
+  <g filter="url(#b5-paint-fine)">
+    <path d="M340 480 C 400 460 460 500 430 540 C 400 580 340 540 340 480 Z" fill="#FFB74C" opacity="0.9"/>
+  </g>
+
+  <!-- 4. Radial splatter ring — uneven blob cluster -->
+  <g filter="url(#b5-paint)">
+    <path d="M220 440 C 280 420 320 470 290 510 C 260 540 200 520 220 440 Z" fill="#FF7A1C" opacity="0.88"/>
+    <path d="M600 460 C 660 440 700 490 670 520 C 640 550 580 530 600 460 Z" fill="#FF7A1C" opacity="0.88"/>
+    <path d="M380 280 C 430 260 470 300 440 330 C 410 350 360 340 380 280 Z" fill="#FFB74C"/>
+    <path d="M420 680 C 470 660 520 700 490 740 C 450 770 400 730 420 680 Z" fill="#FFB74C"/>
+    <path d="M140 260 C 200 240 230 280 200 300 C 170 320 130 290 140 260 Z" fill="#D2600F" opacity="0.85"/>
+    <path d="M620 280 C 670 250 720 300 680 330 C 640 350 600 330 620 280 Z" fill="#D2600F" opacity="0.85"/>
+    <path d="M140 740 C 190 720 230 770 200 800 C 170 820 130 790 140 740 Z" fill="#FF7A1C" opacity="0.8"/>
+    <path d="M620 780 C 670 750 720 800 680 840 C 650 860 600 830 620 780 Z" fill="#FF7A1C" opacity="0.8"/>
+  </g>
+
+  <!-- 5. Orange spark speckles -->
+  <g fill="#FFB74C">
+    <circle cx="100" cy="380" r="5"/><circle cx="700" cy="390" r="5"/>
+    <circle cx="80" cy="580" r="4"/><circle cx="720" cy="580" r="5"/>
+    <circle cx="110" cy="880" r="4"/><circle cx="700" cy="880" r="3"/>
+    <circle cx="350" cy="180" r="4"/><circle cx="480" cy="190" r="3"/>
+    <circle cx="280" cy="860" r="3"/><circle cx="540" cy="860" r="4"/>
+    <circle cx="380" cy="80" r="3"/><circle cx="420" cy="220" r="2.5"/>
+    <circle cx="380" cy="980" r="4"/><circle cx="460" cy="100" r="2.5"/>
+    <circle cx="300" cy="1000" r="2.5"/><circle cx="500" cy="1020" r="3"/>
+  </g>
+
+  <!-- 6. Big flame brush strikes — upward curves -->
+  <g filter="url(#b5-paint-fine)">
+    <path d="M-20 300 C 200 260 400 380 600 280 C 720 220 800 260 820 240"
+          stroke="#FF7A1C" stroke-width="14" fill="none" opacity="0.55" stroke-linecap="round"/>
+    <path d="M-20 820 C 200 780 400 900 600 800 C 720 740 800 780 820 760"
+          stroke="#D2600F" stroke-width="11" fill="none" opacity="0.6" stroke-linecap="round"/>
+  </g>
+
+  <!-- 7. Halftone all four corners -->
+  <g fill="#FF7A1C" opacity="0.8">
+    <circle cx="40" cy="40" r="3.5"/><circle cx="80" cy="40" r="3"/><circle cx="120" cy="40" r="2.5"/><circle cx="160" cy="40" r="2"/>
+    <circle cx="60" cy="70" r="3"/><circle cx="100" cy="70" r="2.5"/><circle cx="140" cy="70" r="2"/>
+    <circle cx="80" cy="100" r="2.5"/><circle cx="120" cy="100" r="2"/>
+    <circle cx="760" cy="40" r="3.5"/><circle cx="720" cy="40" r="3"/><circle cx="680" cy="40" r="2.5"/><circle cx="640" cy="40" r="2"/>
+    <circle cx="740" cy="70" r="3"/><circle cx="700" cy="70" r="2.5"/><circle cx="660" cy="70" r="2"/>
+    <circle cx="720" cy="100" r="2.5"/><circle cx="680" cy="100" r="2"/>
+    <circle cx="40" cy="1080" r="3.5"/><circle cx="80" cy="1080" r="3"/><circle cx="120" cy="1080" r="2.5"/><circle cx="160" cy="1080" r="2"/>
+    <circle cx="60" cy="1050" r="3"/><circle cx="100" cy="1050" r="2.5"/><circle cx="140" cy="1050" r="2"/>
+    <circle cx="80" cy="1020" r="2.5"/><circle cx="120" cy="1020" r="2"/>
+    <circle cx="760" cy="1080" r="3.5"/><circle cx="720" cy="1080" r="3"/><circle cx="680" cy="1080" r="2.5"/><circle cx="640" cy="1080" r="2"/>
+    <circle cx="740" cy="1050" r="3"/><circle cx="700" cy="1050" r="2.5"/><circle cx="660" cy="1050" r="2"/>
+    <circle cx="720" cy="1020" r="2.5"/><circle cx="680" cy="1020" r="2"/>
+  </g>
+
+  <!-- 8. Chevrons vertical on right edge -->
+  <g fill="none" stroke="#FF7A1C" stroke-width="3.5" stroke-linecap="round" opacity="0.9">
+    <path d="M760 420 L780 440 L760 460"/>
+    <path d="M760 460 L780 480 L760 500" opacity="0.65"/>
+    <path d="M760 500 L780 520 L760 540" opacity="0.4"/>
+  </g>
+
+  <!-- 9. Plus sparkles -->
+  <g stroke="#FF7A1C" stroke-width="2.4" stroke-linecap="round" opacity="0.9">
+    <path d="M220 640 L220 660 M210 650 L230 650"/>
+    <path d="M580 660 L580 680 M570 670 L590 670"/>
+    <path d="M380 120 L380 134 M372 127 L388 127"/>
+    <path d="M420 960 L420 976 M412 968 L428 968"/>
+    <path d="M180 480 L180 494 M172 487 L188 487"/>
+    <path d="M640 480 L640 494 M632 487 L648 487"/>
+  </g>
+
+  <!-- 10. Spray overlay -->
+  <rect width="800" height="1120" filter="url(#b5-spray)" opacity="0.28"/>
+
+  <!-- 11. Inner frame -->
+  <rect x="24" y="24" width="752" height="1072" rx="18" ry="18" fill="none" stroke="#FF7A1C" stroke-width="1.4" opacity="0.65"/>
+</svg>

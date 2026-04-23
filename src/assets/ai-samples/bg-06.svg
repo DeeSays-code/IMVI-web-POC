@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1120" preserveAspectRatio="xMidYMid slice">
+  <!-- 06 · RUMBLE — charcoal field with massive red diagonal slash, tapered brush -->
+  <defs>
+    <linearGradient id="b6-base" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A2A2E"/>
+      <stop offset="100%" stop-color="#0C0C0E"/>
+    </linearGradient>
+    <linearGradient id="b6-slash-a" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="transparent" stop-opacity="0"/>
+      <stop offset="10%" stop-color="#EF2F44"/>
+      <stop offset="50%" stop-color="#B80E1E"/>
+      <stop offset="90%" stop-color="#EF2F44"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="b6-brush" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="3" seed="3" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="28"/>
+    </filter>
+    <filter id="b6-paint" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="3" seed="41" result="t"/>
+      <feDisplacementMap in="SourceGraphic" in2="t" scale="18"/>
+    </filter>
+    <filter id="b6-smoke">
+      <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="3" seed="61"/>
+      <feColorMatrix values="0 0 0 0 0.88 0 0 0 0 0.16 0 0 0 0 0.2 0 0 0 0.45 0"/>
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <filter id="b6-spray">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="77"/>
+      <feColorMatrix values="0 0 0 0 0.85 0 0 0 0 0.1 0 0 0 0 0.12 0 0 0 0.38 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+  </defs>
+
+  <!-- 1. Charcoal base -->
+  <rect width="800" height="1120" fill="url(#b6-base)"/>
+
+  <!-- 2. Red smoke band diagonal -->
+  <rect x="-60" y="380" width="920" height="360" filter="url(#b6-smoke)" opacity="0.5" transform="rotate(-12 400 560)"/>
+
+  <!-- 3. THE SLASH — massive diagonal red paint strike with heavy displacement -->
+  <g filter="url(#b6-brush)">
+    <path d="M-80 160 L 140 120 L 860 820 L 860 940 L 620 900 L -80 280 Z"
+          fill="url(#b6-slash-a)"/>
+  </g>
+  <!-- Secondary slash echoing below -->
+  <g filter="url(#b6-brush)">
+    <path d="M-60 280 L 60 240 L 820 900 L 820 1000 L 700 980 L -60 400 Z"
+          fill="#B80E1E" opacity="0.55"/>
+  </g>
+  <!-- Dark core line inside the slash -->
+  <g filter="url(#b6-paint)">
+    <path d="M0 220 L 60 200 L 800 880 L 800 900 L 40 240 Z" fill="#7C0812"/>
+  </g>
+
+  <!-- 4. Splatter cluster at the upper-right endpoint of the slash -->
+  <g filter="url(#b6-paint)">
+    <path d="M640 120 C 720 100 770 170 730 220 C 690 260 620 230 640 120 Z" fill="#EF2F44"/>
+    <path d="M720 220 C 760 200 790 240 770 270 C 740 290 680 270 720 220 Z" fill="#B80E1E" opacity="0.9"/>
+  </g>
+  <!-- Drips off the top cluster -->
+  <g filter="url(#b6-paint)">
+    <path d="M660 240 Q 664 300 660 360" stroke="#B80E1E" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M700 260 Q 704 320 700 380" stroke="#EF2F44" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.85"/>
+  </g>
+  <g fill="#EF2F44">
+    <circle cx="600" cy="260" r="6"/><circle cx="740" cy="320" r="4.5"/>
+    <circle cx="560" cy="200" r="5"/><circle cx="800" cy="180" r="4.5"/>
+  </g>
+
+  <!-- 5. Splatter cluster at the lower-left endpoint -->
+  <g filter="url(#b6-paint)">
+    <path d="M60 780 C 140 760 200 830 160 880 C 120 930 40 880 60 780 Z" fill="#EF2F44"/>
+    <path d="M200 900 C 250 880 290 930 260 960 C 230 980 180 960 200 900 Z" fill="#B80E1E"/>
+  </g>
+  <g fill="#EF2F44">
+    <circle cx="140" cy="960" r="5"/><circle cx="240" cy="980" r="4"/>
+    <circle cx="80" cy="900" r="4"/><circle cx="300" cy="860" r="3.5"/>
+  </g>
+
+  <!-- 6. Flame-like upward brush strikes bottom-center -->
+  <g filter="url(#b6-paint)" stroke="#EF2F44" stroke-linecap="round" fill="none">
+    <path d="M340 1080 C 320 960 400 920 380 820" stroke-width="8" opacity="0.82"/>
+    <path d="M420 1080 C 440 960 400 920 440 820" stroke-width="7" opacity="0.75"/>
+    <path d="M300 1080 C 280 1000 340 980 320 900" stroke-width="5" opacity="0.55"/>
+    <path d="M480 1080 C 500 1000 460 980 480 900" stroke-width="5" opacity="0.55"/>
+    <path d="M260 1080 C 240 1020 280 1000 260 940" stroke-width="4" opacity="0.4"/>
+    <path d="M520 1080 C 540 1020 500 1000 520 940" stroke-width="4" opacity="0.4"/>
+  </g>
+
+  <!-- 7. Spray speckles -->
+  <rect width="800" height="1120" filter="url(#b6-spray)" opacity="0.26"/>
+
+  <!-- 8. Scattered red speckle grit -->
+  <g fill="#EF2F44">
+    <circle cx="200" cy="420" r="2.5"/><circle cx="340" cy="450" r="2"/>
+    <circle cx="460" cy="510" r="2.5"/><circle cx="600" cy="560" r="2"/>
+    <circle cx="140" cy="600" r="2"/><circle cx="280" cy="680" r="2.5"/>
+    <circle cx="500" cy="700" r="2"/><circle cx="640" cy="740" r="2.5"/>
+  </g>
+
+  <!-- 9. Chevrons top-right + bottom-left -->
+  <g fill="none" stroke="#EF2F44" stroke-width="4" stroke-linecap="round">
+    <path d="M760 50 L730 80 L760 110"/>
+    <path d="M760 110 L730 140 L760 170" opacity="0.7"/>
+    <path d="M760 170 L730 200 L760 230" opacity="0.4"/>
+  </g>
+
+  <!-- 10. Halftone top-left -->
+  <g fill="#EF2F44" opacity="0.8">
+    <circle cx="40" cy="70" r="3.5"/><circle cx="80" cy="70" r="3"/><circle cx="120" cy="70" r="2.5"/><circle cx="160" cy="70" r="2"/>
+    <circle cx="60" cy="110" r="3"/><circle cx="100" cy="110" r="2.5"/><circle cx="140" cy="110" r="2"/>
+    <circle cx="80" cy="150" r="2.5"/><circle cx="120" cy="150" r="2"/>
+  </g>
+
+  <!-- 11. Plus sparkles -->
+  <g stroke="#EF2F44" stroke-width="2.4" stroke-linecap="round" opacity="0.82">
+    <path d="M200 420 L200 436 M192 428 L208 428"/>
+    <path d="M400 480 L400 496 M392 488 L408 488"/>
+    <path d="M600 540 L600 554 M593 547 L607 547"/>
+    <path d="M260 680 L260 694 M253 687 L267 687"/>
+    <path d="M480 720 L480 736 M472 728 L488 728"/>
+    <path d="M380 300 L380 314 M373 307 L387 307"/>
+  </g>
+
+  <!-- 12. Inner frame -->
+  <rect x="24" y="24" width="752" height="1072" rx="18" ry="18" fill="none" stroke="#F4E0E3" stroke-width="1.4" opacity="0.6"/>
+</svg>
